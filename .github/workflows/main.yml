@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - develop
-      - staging
 
 jobs:
   test:
@@ -12,24 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 21.x
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 21.x
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
-
-      - name: Run Build
+      
+      - name: Build App
         run: npm run build
 
-      - name: Run Seed
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run: npm run seed
-
-      - name: Run Tests
-        run: npm run test
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
