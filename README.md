@@ -14,6 +14,7 @@
   ## Installation
   This application will be available on github. Copying the SSH link and do a `git clone` on the terminal will clone this repository. 
   Once the code is opened on the local device, open a terminal and do `npm install` `npm run build` `npm run seed` and `npm run start:dev`.
+  This application will also be accesible through the deployed link on render that is attached at the end of this README.md.
   ## Usage
   `npm install` <br>
   `npm run build` <br>
@@ -23,7 +24,10 @@
   `npm run test` <br> ![Screenshot of the start quiz button](./assets/startquizreactquiz.png)
   ![Screenshot of the sample question](./assets/samplequestiontechquiz.png)
   ## GitHub Actions
-  
+  * GitHub Actions tests: <br> 
+  ![screenshot of the Cypress test result](./assets/CheckingTests.png) <br>
+  * GitHub Actions deployments: <br>
+  ![screenshot of the deployments](./assets/DeployToRender.png)
   ## Credits
   N/A
   ## License
